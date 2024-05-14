@@ -24,7 +24,7 @@
 checkButtons:
     PSHD
 
-    BRCLR PTH,#$01,changeMode
+    BRCLR PTH,#$01,changeMode   ; need to be changed to BRSET if run in simulator
     LDAB isSetMode
     CMPB #$01
     BEQ checkButtonsSetMode
