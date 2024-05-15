@@ -1,28 +1,8 @@
-;
-;   Ticker Interrupt, 
-;   The interrupt service routine shall be called every 10ms
-;   Uses Enhanced Capture Timer ECT channel 4
-;
-;   Computerarchitektur 3
-;   (C) 2018 J. Friedrich, W. Zimmermann
-;   Hochschule Esslingen
-;
-;   Author:   J.Friedrich
-;   Modified: W.Zimmermann, Jun  10, 2016
-;
-;   Usage:
-;               JSR initTicker --> Initialize ticker
-;                                 (must be called once)
-;
-;   Within the ISR a counter ticks will be incremented. tick counts up to 1sec,
-;   and then will be reset. The program checks tick and executes some user defined
-;   code (here: toggles the LEDs) once per second
-;
-
-; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-; N O T E: THIS CODE  CONTAINS (at least) 2 BUGS
-; You have to fix these bugs, before the code actually works as specified.
-; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+;********************************************************************
+; Module: ticker.asm
+; Description: Ticker Interrupt. The interrupt service routine shall
+; be called every 10ms. Uses Enhanced Capture Timer ECT channel 4.
+;********************************************************************
 
 ; Export symbols
         XDEF initTicker
@@ -52,12 +32,11 @@ ticks:    ds.b 1                ; Ticker counter
         ORG $FFE6
 int12:  DC.W isrECT4
 
-
 ; ROM: Code section
 .init:  SECTION
 
 ;********************************************************************
-; Public interface function: initLCD ... Initialize Ticker (called once)
+; Public interface function: initTicker ... Initialize Ticker (called once)
 ; Parameter: -
 ; Return:    -
 initTicker:
@@ -90,7 +69,7 @@ isrECT4:
         ldab #TIMER_CH4         ; Clear the interrupt flag, write a 1 to bit 4
         stab TFLG1
 
-        inc  ticks              ; Check, if 1 sec has passed
+        inc  ticks              ; Check if 1 sec has passed
         ldaa ticks
         cmpa #ONESEC
         bne  notYet             ; If not, skip rest of the ISR
@@ -104,13 +83,5 @@ isrECT4:
         ; Toggle the LED 0
         LDAB #$01
         JSR toggleLED
-
-        ; bug 3: the code below overwrites the value of PORTB
-        ; ldab PORTB              ; In this example we let blink the LED on port B.0
-        ; comb
-        ; andb #1
-        ; stab PORTB
-
-        ; --- End of user code -----------------------------------------------
 
 notYet: rti

@@ -1,3 +1,9 @@
+/********************************************************************
+ * Module: thermometer.c
+ * Description: This module handles the initialization and reading
+ * of temperature values using the ADC.
+ ********************************************************************/
+
 #include <hidef.h>                              // Common defines
 #include <mc9s12dp256.h>                        // CPU specific defines
 
@@ -5,33 +11,36 @@
 
 void delay_10ms(void);
 
-int temperature = 0x3FF;
+int temperature = 0x3FF; // Initial temperature value
 
-void interrupt 22 adcISR(void)
-{  // Read the result registers and compute average of 4 measurements
-   temperature = ((ATD0DR0 + ATD0DR1 + ATD0DR2 + ATD0DR3) * 100 / 1023) - 30;
-   
-   ATD0CTL2 = ATD0CTL2 | 0x01;  // Reset interrupt flag (bit 0 in ATD0CTL2)
-
-   ATD0CTL5 = 0b10000111;       // Start next measurement on single channel 7
-}
-
+/********************************************************************
+ * Function: updateThermometer
+ * Description: Updates the temperature reading by starting a new ADC conversion.
+ ********************************************************************/
 void updateThermometer(void) {
-    ATD0CTL5 = 0x87;// Start conversion on channel 7
+    ATD0CTL5 = 0x87; // Start conversion on channel 7
     while ((ATD0STAT0 & 0x80) != 0) {
         // wait until conversion is finished
     }
     temperature = ATD0DR0 * 50 / 511 - 30; // lower values so it does not overflow
 }
 
+/********************************************************************
+ * Function: initThermometer
+ * Description: Initializes the ADC for temperature measurement.
+ ********************************************************************/
 void initThermometer(void) {
-    //--- Initialize ATD0 -------------------------------------------------
-    ATD0CTL2 = 0xC0;// Enable ATD0, no interrupt
+    ATD0CTL2 = 0xC0; // Enable ATD0, no interrupt
     delay_10ms();
-    ATD0CTL3 = 0x08;// Single conversion only
-    ATD0CTL4 = 0x05;// 10 bit, 2 MHz ATD0 clock"
+    ATD0CTL3 = 0x08; // Single conversion only
+    ATD0CTL4 = 0x05; // 10 bit, 2 MHz ATD0 clock
 }
 
+/********************************************************************
+ * Function: getTemperatureString
+ * Description: Converts the temperature value to a string.
+ * Parameters: char* temperatureString - Pointer to the string buffer.
+ ********************************************************************/
 void getTemperatureString(char* temperatureString) {
     // the temperature String has to have a length of 7
     decToASCII_Wrapper(temperatureString, temperature);
@@ -41,9 +50,9 @@ void getTemperatureString(char* temperatureString) {
     } else {
         temperatureString[1] = temperatureString[4];
     }
-    temperatureString[2]=temperatureString[5];
-    temperatureString[3]='\xDF';
-    temperatureString[4]='C';
-    temperatureString[5]='\0';
-    temperatureString[6]='\0';
+    temperatureString[2] = temperatureString[5];
+    temperatureString[3] = '\xDF';
+    temperatureString[4] = 'C';
+    temperatureString[5] = '\0';
+    temperatureString[6] = '\0';
 }

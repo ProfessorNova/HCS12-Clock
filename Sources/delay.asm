@@ -1,24 +1,24 @@
-; export symbols
+;********************************************************************
+; Module: delay.asm
+; Description: This module provides a delay function for half a second.
+;********************************************************************
+
+; Export symbols
             XDEF   delay_0_5_sec        ; Export the symbol delay_0_5_sec
 
-; import symbols
-                                        ; (Not used here)
-
-; include processor definitions (if necessary)
+; Include processor definitions (if necessary)
             INCLUDE 'mc9s12dp256.inc'
 
 ; Defines
         SPEED:  EQU     2048                   ; Change this number to change counting speed
 
-; RAM: global assembler data in RAM
-.data: SECTION                          ; (Not used here)
-
-; ROM: Constant data
-.const:SECTION                          ; (Not used here)
-
 ; ROM: Assembler program code in RAM
 .init: SECTION
 
+;********************************************************************
+; Public interface function: delay_0_5_sec ... Provides a delay of 0.5 seconds.
+; Parameter: -
+; Return:    -
 delay_0_5_sec:
         PSHD
         PSHX

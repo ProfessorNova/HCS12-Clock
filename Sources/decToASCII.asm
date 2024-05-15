@@ -1,4 +1,9 @@
-; export symbols
+;********************************************************************
+; Module: decToASCII.asm
+; Description: Converts an integer value to its ASCII representation.
+;********************************************************************
+
+; Export symbols
         XDEF decToASCII
 
 ; Defines
@@ -12,12 +17,15 @@
 ; ROM: Code section
 .init: SECTION
 
+;********************************************************************
+; Public interface function: decToASCII ... Converts an integer value to its ASCII representation.
+
+; Parameter: D ... value to convert
+;            X ... pointer to the string buffer
+; Return:    -
+; Registers: Unchanged (when function returns)
+;*********************************************************************
 decToASCII:
-
-; Convert a integer value to ASCII
-; Input: val: integer value in register D
-;        string: pointer to location in RAM in register X
-
         PSHD
         PSHX
         PSHY
