@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-16T12:37:44.521Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="7M_dZj1yeUvfwA1BA9vQ" version="24.4.2" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2024-05-16T12:44:45.612Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="LB349_S-0u12_6M7Be74" version="24.4.2" type="github" pages="4">
   <diagram name="flowchart_main_c_v1" id="LAKEMwU9PvFR6IIZpZZs">
     <mxGraphModel dx="674" dy="557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -221,7 +221,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="00r_fYVAh7q37uT4tPWA" name="flowchart_clock_c_v1">
-    <mxGraphModel dx="1790" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2325" dy="1238" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -529,6 +529,35 @@
         </mxCell>
         <mxCell id="Hq5s0ieXtP1kKT92z6ZX-12" value="Initialize the Clock with start time 12:59:30" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="320" y="240" width="120" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="T_dUaW1z-KrjixgZOQI_" name="flowchart_thermometer_c_v1">
+    <mxGraphModel dx="465" dy="384" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9Ffqd6VnoH7SIX8yt-4i-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9Ffqd6VnoH7SIX8yt-4i-1" target="9Ffqd6VnoH7SIX8yt-4i-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9Ffqd6VnoH7SIX8yt-4i-1" value="updateThermometer" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="240" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9Ffqd6VnoH7SIX8yt-4i-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9Ffqd6VnoH7SIX8yt-4i-2" target="9Ffqd6VnoH7SIX8yt-4i-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9Ffqd6VnoH7SIX8yt-4i-2" value="start conversion on channel 7" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="320" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9Ffqd6VnoH7SIX8yt-4i-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9Ffqd6VnoH7SIX8yt-4i-4" target="9Ffqd6VnoH7SIX8yt-4i-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9Ffqd6VnoH7SIX8yt-4i-4" value="wait until conversion is finished" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9Ffqd6VnoH7SIX8yt-4i-6" value="scale and move the value so it can range from -30 to 70" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="480" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
