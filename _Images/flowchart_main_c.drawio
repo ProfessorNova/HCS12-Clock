@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-16T11:31:09.567Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="aLpSH4DsHR3G7kJrNXbk" version="24.4.2" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-16T11:31:41.914Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="E4bT_xhVoeze9gY3etuj" version="24.4.2" type="github" pages="2">
   <diagram name="flowchart_main_c" id="M6uagCtBU-Mpp7MkMFuS">
     <mxGraphModel dx="1050" dy="608" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -155,6 +155,14 @@
         <mxCell id="_5o79X83xNDhyQxUa3Pp-70" value="checkButtons()" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="300" y="1800" width="120" height="60" as="geometry" />
         </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="B_Ukn9qOTJEpPQO8fC72" name="flowchart_led">
+    <mxGraphModel dx="674" dy="607" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
       </root>
     </mxGraphModel>
   </diagram>
