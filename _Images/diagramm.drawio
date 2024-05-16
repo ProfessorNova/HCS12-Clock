@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-16T13:26:48.683Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="1v3Hr107ImTEfzg4ce9p" version="24.4.2" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2024-05-16T14:39:03.458Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="vf0O3gOb6Yu2pyv-9lQi" version="24.4.2" type="github" pages="6">
   <diagram name="flowchart_main_c_v1" id="LAKEMwU9PvFR6IIZpZZs">
     <mxGraphModel dx="674" dy="557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -533,7 +533,53 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="T_dUaW1z-KrjixgZOQI_" name="flowchart_thermometer_c_v1" />
+  <diagram id="T_dUaW1z-KrjixgZOQI_" name="flowchart_thermometer_c_v1">
+    <mxGraphModel dx="988" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-0" />
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-1" parent="qnaPuIT8gbBDCcf0jgvj-0" />
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="qnaPuIT8gbBDCcf0jgvj-1" source="qnaPuIT8gbBDCcf0jgvj-2" target="qnaPuIT8gbBDCcf0jgvj-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-2" value="updateThermometer()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="qnaPuIT8gbBDCcf0jgvj-1">
+          <mxGeometry x="360" y="520" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="qnaPuIT8gbBDCcf0jgvj-1" source="qnaPuIT8gbBDCcf0jgvj-3" target="qnaPuIT8gbBDCcf0jgvj-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-3" value="Start conversion on channel 7" style="whiteSpace=wrap;html=1;" vertex="1" parent="qnaPuIT8gbBDCcf0jgvj-1">
+          <mxGeometry x="380" y="600" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="qnaPuIT8gbBDCcf0jgvj-1" source="qnaPuIT8gbBDCcf0jgvj-5" target="qnaPuIT8gbBDCcf0jgvj-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-5" value="Wait until conversion is finished" style="whiteSpace=wrap;html=1;" vertex="1" parent="qnaPuIT8gbBDCcf0jgvj-1">
+          <mxGeometry x="380" y="680" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-7" value="Scale and move the values range so it goes from -30 to 70" style="whiteSpace=wrap;html=1;" vertex="1" parent="qnaPuIT8gbBDCcf0jgvj-1">
+          <mxGeometry x="380" y="760" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="qnaPuIT8gbBDCcf0jgvj-1" source="qnaPuIT8gbBDCcf0jgvj-9" target="qnaPuIT8gbBDCcf0jgvj-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-9" value="initThermometer()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="qnaPuIT8gbBDCcf0jgvj-1">
+          <mxGeometry x="560" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-11" value="&lt;div&gt;Set the ATD0 control registers&lt;/div&gt;&lt;div&gt;(Enable ATD0, no interrupt, singe conversion only, 10 bit, 2 MHz ATD0 clock)&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="qnaPuIT8gbBDCcf0jgvj-1">
+          <mxGeometry x="560" y="600" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="qnaPuIT8gbBDCcf0jgvj-1" source="qnaPuIT8gbBDCcf0jgvj-13" target="qnaPuIT8gbBDCcf0jgvj-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-13" value="getTemperatureString()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="qnaPuIT8gbBDCcf0jgvj-1">
+          <mxGeometry x="720" y="520" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qnaPuIT8gbBDCcf0jgvj-14" value="Write temperature string into char buffer" style="whiteSpace=wrap;html=1;" vertex="1" parent="qnaPuIT8gbBDCcf0jgvj-1">
+          <mxGeometry x="740" y="600" width="120" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
   <diagram id="PhM9FCtDqgH2IdkBpLA0" name="flowchart_ticker_asm_v1">
     <mxGraphModel dx="385" dy="318" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
