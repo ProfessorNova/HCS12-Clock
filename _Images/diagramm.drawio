@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-16T11:36:35.196Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="Isr4FRLxoJMrC9q6b6lW" version="24.4.2" type="github" pages="2">
-  <diagram name="flowchart_main_c" id="LAKEMwU9PvFR6IIZpZZs">
-    <mxGraphModel dx="1290" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+<mxfile host="app.diagrams.net" modified="2024-05-16T11:46:24.994Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="qjQCXUcoIJ3ZL-ex7jXW" version="24.4.2" type="github" pages="2">
+  <diagram name="flowchart_main_c_v1" id="LAKEMwU9PvFR6IIZpZZs">
+    <mxGraphModel dx="674" dy="557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -158,11 +158,65 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="flowchart_led" id="KltzF19rLZG0fNIekWbs">
-    <mxGraphModel dx="674" dy="607" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram name="flowchart_led_asm_v1" id="KltzF19rLZG0fNIekWbs">
+    <mxGraphModel dx="843" dy="696" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="3n9LEDOtnd_Jcds808YG-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3cs3qNd--yN3s4iW0PKz-1" target="3n9LEDOtnd_Jcds808YG-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3cs3qNd--yN3s4iW0PKz-1" value="initLED()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3n9LEDOtnd_Jcds808YG-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3cs3qNd--yN3s4iW0PKz-2" target="3n9LEDOtnd_Jcds808YG-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3cs3qNd--yN3s4iW0PKz-2" value="setLED()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3n9LEDOtnd_Jcds808YG-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3cs3qNd--yN3s4iW0PKz-3" target="3n9LEDOtnd_Jcds808YG-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3cs3qNd--yN3s4iW0PKz-3" value="getLED()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3n9LEDOtnd_Jcds808YG-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3cs3qNd--yN3s4iW0PKz-4" target="3n9LEDOtnd_Jcds808YG-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3cs3qNd--yN3s4iW0PKz-4" value="toggleLED()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3n9LEDOtnd_Jcds808YG-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3n9LEDOtnd_Jcds808YG-2" target="3n9LEDOtnd_Jcds808YG-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3n9LEDOtnd_Jcds808YG-2" value="Set Port J.1 as output" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3n9LEDOtnd_Jcds808YG-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3n9LEDOtnd_Jcds808YG-4" target="3n9LEDOtnd_Jcds808YG-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3n9LEDOtnd_Jcds808YG-4" value="J.1=0 to activate LEDs" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3n9LEDOtnd_Jcds808YG-6" value="Port B.7...0 as outputs" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3n9LEDOtnd_Jcds808YG-8" value="Store bits in register B in port B" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3n9LEDOtnd_Jcds808YG-10" value="Load bits from port B into register B" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3n9LEDOtnd_Jcds808YG-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3n9LEDOtnd_Jcds808YG-12" target="3n9LEDOtnd_Jcds808YG-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3n9LEDOtnd_Jcds808YG-12" value="XOR bits in register B with set bits in port B" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3n9LEDOtnd_Jcds808YG-14" value="Store resulting bits in port B" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
