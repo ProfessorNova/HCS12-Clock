@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-16T12:44:45.612Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="LB349_S-0u12_6M7Be74" version="24.4.2" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2024-05-16T13:05:00.848Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="jF9LzWx0_Zxhi3E5UJ2t" version="24.4.2" type="github" pages="5">
   <diagram name="flowchart_main_c_v1" id="LAKEMwU9PvFR6IIZpZZs">
     <mxGraphModel dx="674" dy="557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -534,14 +534,14 @@
     </mxGraphModel>
   </diagram>
   <diagram id="T_dUaW1z-KrjixgZOQI_" name="flowchart_thermometer_c_v1">
-    <mxGraphModel dx="465" dy="384" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="562" dy="464" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="9Ffqd6VnoH7SIX8yt-4i-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9Ffqd6VnoH7SIX8yt-4i-1" target="9Ffqd6VnoH7SIX8yt-4i-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="9Ffqd6VnoH7SIX8yt-4i-1" value="updateThermometer" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="9Ffqd6VnoH7SIX8yt-4i-1" value="updateThermometer()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="440" y="240" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="9Ffqd6VnoH7SIX8yt-4i-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9Ffqd6VnoH7SIX8yt-4i-2" target="9Ffqd6VnoH7SIX8yt-4i-4">
@@ -558,6 +558,99 @@
         </mxCell>
         <mxCell id="9Ffqd6VnoH7SIX8yt-4i-6" value="scale and move the value so it can range from -30 to 70" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="440" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8Wvc81YpIDBzNdMSZPNM-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8Wvc81YpIDBzNdMSZPNM-1" target="8Wvc81YpIDBzNdMSZPNM-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8Wvc81YpIDBzNdMSZPNM-1" value="initThermometer()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="240" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8Wvc81YpIDBzNdMSZPNM-2" value="&lt;div&gt;set ATD0 control registries&lt;/div&gt;&lt;div&gt;(enable, no interrupt, single coversion only, 10 bit 2 MHz ATD0 clock)&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="320" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8Wvc81YpIDBzNdMSZPNM-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8Wvc81YpIDBzNdMSZPNM-5" target="8Wvc81YpIDBzNdMSZPNM-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8Wvc81YpIDBzNdMSZPNM-5" value="getTemperatureString()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="240" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8Wvc81YpIDBzNdMSZPNM-6" value="write temperature string into char buffer" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="320" width="120" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="PhM9FCtDqgH2IdkBpLA0" name="flowchart_ticker_asm_v1">
+    <mxGraphModel dx="385" dy="318" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Ass3Vxb3ZhTAp-6Iwl1-1" target="-Ass3Vxb3ZhTAp-6Iwl1-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-1" value="initTicker()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="240" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Ass3Vxb3ZhTAp-6Iwl1-2" target="-Ass3Vxb3ZhTAp-6Iwl1-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-2" value="&lt;div&gt;Set channel 4 in &quot;output compare&quot; mode&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Ass3Vxb3ZhTAp-6Iwl1-4" target="-Ass3Vxb3ZhTAp-6Iwl1-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-4" value="Enable channel 4 interrupt" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Ass3Vxb3ZhTAp-6Iwl1-6" target="-Ass3Vxb3ZhTAp-6Iwl1-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-6" value="Set tick counter to 0" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="460" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-8" value="Set time prescaler and switch timer on" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Ass3Vxb3ZhTAp-6Iwl1-10" target="-Ass3Vxb3ZhTAp-6Iwl1-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-10" value="isrECT4()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="240" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Ass3Vxb3ZhTAp-6Iwl1-11" target="-Ass3Vxb3ZhTAp-6Iwl1-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-11" value="Schdule the next ISR period" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="320" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Ass3Vxb3ZhTAp-6Iwl1-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="580.0285714285714" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-13" value="Clear the interrupt flag" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="380" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Ass3Vxb3ZhTAp-6Iwl1-17" target="-Ass3Vxb3ZhTAp-6Iwl1-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-20" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="-Ass3Vxb3ZhTAp-6Iwl1-19">
+          <mxGeometry x="-0.1286" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-17" value="Has 1 second passed?" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="440" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Ass3Vxb3ZhTAp-6Iwl1-18" target="-Ass3Vxb3ZhTAp-6Iwl1-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-18" value="set clockEvent to 1" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-Ass3Vxb3ZhTAp-6Iwl1-21" value="Toggle the LED 0" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="585" width="120" height="35" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
