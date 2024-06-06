@@ -1,86 +1,12 @@
-;
-;   Simple LCD driver for Dragon12's 16 x 2 LCD
-;                               (16 characters in 2 rows)
-;
-;   Computerarchitektur
-;   (C) 2019-2022 J. Friedrich, W. Zimmermann, R. Keller
-;   Hochschule Esslingen
-;
-;   Author:   	   J.Friedrich, W. Zimmermann
-;   Last Modified: R. Keller, August 22, 2022
-;
-;   Usage:
-;               JSR initLCD   --> Initialization
-;                                 (Must be called once)
-;
-;               JSR writeLine --> Output a zero-termated string to LCD
-;                                 Parameter:
-;                                 X ... Pointer to string
-;                                 B ... Row number (0 or 1)
-;
-;               JSR delay_10ms --> 10ms Delay (@24MHz bus clock)
-;
-;   Hardware interface of LCD display:
-;   PORT K bit 0: Signal R/S    0=Command(instruction) 1=Data
-;                               Indicates if output is a LCD command or data (ASCII character)
-;          bit 1: Signal EN     1=Enable
-;                               Toggled to 1 and back to 0 to generate a write signal for the LCD display
-;                               (output R/S and data before toggling this bit)
-;          bit 5...2: DB7...4   4bit Data bus
-;                               The LCD Display uses a 4bit data bus.
-;                               8bit values are transmitted as two 4bit nibbles
-;                               in Big Endian sequence (higher 4bit first)
-;
-;   Internal operation of the LCD interface
-;   The user can write commands (instructions) or data (ASCII characters) to the LCD display,
-;   depending on the setting of the R/S signal. (The driver does not support reading back
-;   data from the display).
-;
-;   The display can interprete a large number of commands, which are described in detail
-;   in Hantronix's documentation LCD_Spec.pdf, page 44. Before data can be sent to the display,
-;   it must be initialized via a sequence of commands. When writing to the LCD display,
-;   several time delays have to be respected.
-;
-;   From a user's perspective, initialization is done by calling function initLCD(). Internally,
-;   this function calls inidsp1() and inidsp2(), to write the required command sequence. After
-;   initialization, the display is cleared.
-;
-;   After initialization, the user program can write strings to both lines of the LCD display
-;   via function writeLine(). Before calling writeLine(), the user program has to copy a
-;   point to the string into register X and the row number (0 or 1) in register B. The string
-;   must be zero terminated.
-;   Both rows of the LCD can display 16 characters. The output will start in the first column
-;   and overwrite the previous output till the end of the row. If the string is longer than
-;   16 characters, only the first 16 will be displayed.
-;
-;   Note: This driver does not show the cursor and does not provide any functions to move
-;   the cursor or scroll the display horizontally or vertically. For the necessary command
-;   sequences see the LCD's documentation if required.
-;
-; -----------------------------------------------------------------------------
-;   LCD Display of the CodeWarrior debugger's True Time Simulation
-;   The LCD display of the Dragon 12 Boards can be simulated,if you open the
-;   LCD componente in the debugger (Component - Open - LCD)
-;   and configure it: Right click on LCD - Setup - Data: 32 - Control: 0.
-;   The simulated LCD display is not fully compatible with the LCD display
-;   of the Dragon12 board. Therefore, the LCD driver has a special code section for the
-;   simulated display, which must be activated. This is done via conditional assembly with
-;   the symbol _HCS12_SERIALMON (defined when compiling for the MONITOR target (=real Dragon12
-;   hardware) and symbol SIMULATOR (defined, when compiled for the SIMULATOR target).
-  IFNDEF _HCS12_SERIALMON
-    IFNDEF SIMULATOR 
-    ENDIF
-  ENDIF
+;********************************************************************
+; Module: lcd.asm
+; Description: Simple LCD driver for Dragon12's 16x2 LCD.
+;********************************************************************
 
-
-; NOTE:  T H I S  S O F T W A R E  I S  B U G G Y
-; This code has (at least) two bugs, which must be removed.
-; Otherwise the software will not work as expected.
-
-; export symbols
+; Export symbols
         XDEF initLCD, writeLine, delay_10ms
 
-; include derivative specific macros
+; Include derivative specific macros
         INCLUDE 'mc9s12dp256.inc'
 ; Based on CPU DB MC9S12DP256_112, version 2.87.441 (RegistersPrg V2.28)
 
@@ -12897,17 +12823,15 @@ temp1:  ds.b 1
 .const: SECTION
 
 ; Initialization command sequences
-; Sequence 1 will output commands $3 - $3 - $3 - $2 as four nibbles to reset the LCD
-; (see Hantroix LCD_Spec.pdf, pg. 4: Software Initialization for 4bit Interfaces
 inidsp1:
   IFDEF  SIMULATOR
-        dc.b 3          ; Nummer of commands
+        dc.b 3          ; Number of commands
         dc.b $30        ; Reset char
         dc.b $30        ; Reset char
         dc.b $30        ; Reset char
   ELSE
   ENDIF
-; Sequence 2 will output the commands described below
+
 inidsp2:
         dc.b 4          ; Number of commands
   IFDEF  SIMULATOR
@@ -13103,4 +13027,3 @@ outputByte:
           rts
   ELSE
   ENDIF
-

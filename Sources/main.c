@@ -1,6 +1,7 @@
 /********************************************************************
  * Module: main.c
  * Description: Main module for the clock program.
+ * Lab2 Created by Florian Wieland & Alexander Laukart
  ********************************************************************/
 
 #include <hidef.h>                              // Common defines

@@ -1,10 +1,13 @@
-; export symbols
+;********************************************************************
+; Module: led.asm
+; Description: This module controls the initialization and manipulation
+; of the LEDs.
+;********************************************************************
+
+; Export symbols
             XDEF   initLED, setLED, getLED, toggleLED
 
-; import symbols
-                                        ; (Not used here)
-
-; include processor definitions (if necessary)
+; Include processor definitions (if necessary)
             INCLUDE 'mc9s12dp256.inc'
 ; Based on CPU DB MC9S12DP256_112, version 2.87.441 (RegistersPrg V2.28)
 
@@ -12811,29 +12814,29 @@ mNVFSEC_KEYEN:      equ    %10000000
 
 ; EOF
 
-; RAM: global assembler data in RAM
-.data: SECTION                          ; (Not used here)
-
-; ROM: Constant data
-.const: SECTION                         ; (Not used here)
-
 ; ROM: Assembler program code in RAM
 .init: SECTION
 
-; This subroutine initializes all required ports to drive the LEDs. At the end of this function all LEDs are turned off.
+;********************************************************************
+; Public interface function: initLED ... Initializes all required ports 
+; to drive the LEDs. At the end of this function all LEDs are turned off.
+; Parameter: -
+; Return:    -
 initLED:
     PSHD
 
     BSET DDRJ, #2                   ; Bit Set:   Port J.1 as output
     BCLR PTJ,  #2                   ; Bit Clear: J.1=0 --> Activate LEDs
 
-endif
     MOVB #$FF, DDRB                 ; $FF -> DDRB:  Port B.7...0 as outputs (LEDs)
 
     PULD
     RTS
 
-; This subroutine has an 8 bit calling parameter in register B. The bits in this parameter define, which of the 8 LEDs are to be turned on (1) or off (0).
+;********************************************************************
+; Public interface function: setLED ... Sets the LEDs according to the parameter.
+; Parameter: B - Bits in this parameter define which LEDs are turned on (1) or off (0).
+; Return:    -
 setLED:
     PSHD
 
@@ -12842,13 +12845,19 @@ setLED:
     PULD
     RTS
 
-; This subroutine returns an 8 bit value in register B. The bits in this value define, which of the 8 LEDs are currently turned on (1) or off (0).
+;********************************************************************
+; Public interface function: getLED ... Returns the current LED status.
+; Parameter: -
+; Return:    B - Bits define which LEDs are currently turned on (1) or off (0).
 getLED:
     LDAB PORTB                          ; Get current LED status
 
     RTS
 
-; This subroutine has an 8 bit calling parameter in register B. The bits define, which of the 8 LEDs shall be toggled.
+;********************************************************************
+; Public interface function: toggleLED ... Toggles the LEDs according to the parameter.
+; Parameter: B - Bits define which LEDs are toggled.
+; Return:    -
 toggleLED:
     PSHD
 

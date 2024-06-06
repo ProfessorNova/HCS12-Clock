@@ -109,7 +109,7 @@ void getTimeString(char *timeString) {
     timeString[11] = '\0';
 }
 #else
-int amPm = 1;
+int amPm = 0;
 
 void incSeconds(void){
     seconds++;
@@ -127,9 +127,11 @@ void incMinutes(void){
 
 void incHours(void){
     hours++;
-    if (hours == 13) {
-        hours = 1;
+    if (hours == 12) {
         amPm = !amPm;
+    }
+    else if (hours == 13) {
+        hours = 1;
     }
 }
 
@@ -185,9 +187,9 @@ void getTimeString(char *timeString) {
  * Description: Initializes the clock with the default time.
  ********************************************************************/
 void initClock(void) {
-    seconds = 30;
+    seconds = 50;
     minutes = 59;
-    hours = 12;
+    hours = 11;
 }
 
 /********************************************************************

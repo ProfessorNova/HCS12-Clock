@@ -1,5 +1,5 @@
 *** EVALUATION ***
-PROGRAM "C:\Users\flowo\OneDrive\Hochschule Esslingen\4. Semester\Computer Architecture\Lab\CA3_Lab2\lab2-Uhr-C-Vorlage - prep - Copy\bin\Simulator.abs"
+PROGRAM "C:\Users\alexl\Desktop\HCS12-Clock\bin\Simulator.abs"
 
 *********************************************************************************************
 TARGET SECTION
@@ -35,7 +35,7 @@ extern struct _tagStartup {
   long     stackOffset    0x1156
   unsigned nofZeroOut     1
   _Range   pZeroOut       0x1000     87
-  _Copy    *toCopyDownBeg 0xC481
+  _Copy    *toCopyDownBeg 0xC46B
 } _startupData;
 
 *********************************************************************************************
@@ -45,9 +45,9 @@ Section Name                    Size  Type     From       To       Segment
 .init                            532     R     0xC000     0xC213   ROM_C000
 .startData                        15     R     0xC214     0xC222   ROM_C000
 .rodata1                          30     R     0xC223     0xC240   ROM_C000
-.text                            567     R     0xC241     0xC477   ROM_C000
-.copy                             45     R     0xC481     0xC4AD   ROM_C000
-.data                             39   R/W     0x1000     0x1026   RAM
+.text                            545     R     0xC241     0xC461   ROM_C000
+.copy                             43     R     0xC46B     0xC495   ROM_C000
+.data                             37   R/W     0x1000     0x1024   RAM
 .abs_section_8                     1   N/I        0x8        0x8   .absSeg0
 .abs_section_9                     1   N/I        0x9        0x9   .absSeg1
 .abs_section_a                     1   N/I        0xA        0xA   .absSeg2
@@ -574,15 +574,14 @@ Section Name                    Size  Type     From       To       Segment
 .abs_section_2ae                   2   N/I      0x2AE      0x2AF   .absSeg523
 .abs_section_2be                   2   N/I      0x2BE      0x2BF   .absSeg524
 ticker.asm__ORG00001               2     R     0xFFE6     0xFFE7   .absSeg525
-.abs_section_ffd2                  2     R     0xFFD2     0xFFD3   .absSeg526
-.bss                               7   R/W     0x1027     0x102D   RAM
+.bss                               9   R/W     0x1025     0x102D   RAM
 .common                           41   R/W     0x102E     0x1056   RAM
-.const                             9     R     0xC478     0xC480   ROM_C000
+.const                             9     R     0xC462     0xC46A   ROM_C000
 .stack                           256   R/W     0x1057     0x1156   RAM
-.vectSeg527_vect                   2     R     0xFFFE     0xFFFF   .vectSeg527
+.vectSeg526_vect                   2     R     0xFFFE     0xFFFF   .vectSeg526
 
 Summary of section sizes per section type:
-READ_ONLY (R):         4B4 (dec:     1204)
+READ_ONLY (R):         49A (dec:     1178)
 READ_WRITE (R/W):      157 (dec:      343)
 NO_INIT (N/I):         24E (dec:      590)
 
@@ -1080,12 +1079,12 @@ MODULE:                 -- mc9s12dp256.c.o --
      _TC1H                                       7A       2       2       0   .abs_section_7a
      _TC2H                                       7C       2       2       0   .abs_section_7c
      _TC3H                                       7E       2       2       0   .abs_section_7e
-     _ATD0CTL23                                  82       2       2       3   .abs_section_82
-     _ATD0CTL45                                  84       2       2       3   .abs_section_84
-     _ATD0DR0                                    90       2       2       2   .abs_section_90
-     _ATD0DR1                                    92       2       2       1   .abs_section_92
-     _ATD0DR2                                    94       2       2       1   .abs_section_94
-     _ATD0DR3                                    96       2       2       1   .abs_section_96
+     _ATD0CTL23                                  82       2       2       2   .abs_section_82
+     _ATD0CTL45                                  84       2       2       2   .abs_section_84
+     _ATD0DR0                                    90       2       2       1   .abs_section_90
+     _ATD0DR1                                    92       2       2       0   .abs_section_92
+     _ATD0DR2                                    94       2       2       0   .abs_section_94
+     _ATD0DR3                                    96       2       2       0   .abs_section_96
      _ATD0DR4                                    98       2       2       0   .abs_section_98
      _ATD0DR5                                    9A       2       2       0   .abs_section_9a
      _ATD0DR6                                    9C       2       2       0   .abs_section_9c
@@ -1135,10 +1134,10 @@ MODULE:                 -- main.c.o --
      STRING..C..HE.Prof..Z.4                   C232       F      15       1   .rodata1    
      memberString                              1000      10      16       1   .data       
      altString                                 1010      10      16       1   .data       
-     isSetMode                                 1027       2       2       4   .bss        
-     clockEvent                                1029       1       1       3   .bss        
-     currentString                             102A       2       2       3   .bss        
-     tenSecCounter                             102C       2       2       3   .bss        
+     isSetMode                                 1025       2       2       4   .bss        
+     clockEvent                                1027       1       1       3   .bss        
+     currentString                             1028       2       2       3   .bss        
+     tenSecCounter                             102A       2       2       3   .bss        
      timeString                                102E       C      12      11   .common     
      temperatureString                         103A       7       7       6   .common     
      lowerString                               1041      10      16      17   .common     
@@ -1179,25 +1178,25 @@ MODULE:                 -- lcd.asm.o --
 - VARIABLES:
      VAR00001                                  1021       1       1       2   .data       
      temp1                                     1022       1       1       0   .data       
-     VAR00002                                  C478       1       1       1   .const      
-     VAR00003                                  C479       1       1       0   .const      
-     VAR00004                                  C47A       1       1       0   .const      
-     VAR00005                                  C47B       1       1       0   .const      
-     VAR00006                                  C47C       1       1       1   .const      
-     VAR00007                                  C47D       1       1       0   .const      
-     VAR00008                                  C47E       1       1       0   .const      
-     VAR00009                                  C47F       1       1       0   .const      
-     VAR00010                                  C480       1       1       0   .const      
+     VAR00002                                  C462       1       1       1   .const      
+     VAR00003                                  C463       1       1       0   .const      
+     VAR00004                                  C464       1       1       0   .const      
+     VAR00005                                  C465       1       1       0   .const      
+     VAR00006                                  C466       1       1       1   .const      
+     VAR00007                                  C467       1       1       0   .const      
+     VAR00008                                  C468       1       1       0   .const      
+     VAR00009                                  C469       1       1       0   .const      
+     VAR00010                                  C46A       1       1       0   .const      
 MODULE:                 -- clock.c.o --
 - PROCEDURES:
      incSeconds                                C34B      12      18       2   .text       
      incMinutes                                C35D      12      18       2   .text       
-     incHours                                  C36F      1C      28       2   .text       
-     getTimeString                             C38B      5B      91       1   .text       
-     initClock                                 C3E6      11      17       1   .text       
-     tickClock                                 C3F7      14      20       1   .text       
+     incHours                                  C36F      26      38       2   .text       
+     getTimeString                             C395      5C      92       1   .text       
+     initClock                                 C3F1      11      17       1   .text       
+     tickClock                                 C402      14      20       1   .text       
 - VARIABLES:
-     amPm                                      1023       2       2       3   .data       
+     amPm                                      102C       2       2       3   .bss        
      seconds                                   1051       2       2       6   .common     
      minutes                                   1053       2       2       6   .common     
      hours                                     1055       2       2       5   .common     
@@ -1231,13 +1230,11 @@ MODULE:                 -- delay.asm.o --
 - VARIABLES:
 MODULE:                 -- thermometer.c.o --
 - PROCEDURES:
-     adcISR                                    C40B      21      33       1   .text       
-     updateThermometer                         C42C      1A      26       1   .text       
-     initThermometer                           C446       F      15       1   .text       
-     getTemperatureString                      C455      23      35       1   .text       
+     updateThermometer                         C416      1A      26       1   .text       
+     initThermometer                           C430       F      15       1   .text       
+     getTemperatureString                      C43F      23      35       1   .text       
 - VARIABLES:
-     temperature                               1025       2       2       3   .data       
-     _Vector_22                                FFD2       2       2       0   .abs_section_ffd2
+     temperature                               1023       2       2       2   .data       
 
 *********************************************************************************************
 MODULE STATISTIC
@@ -1248,25 +1245,25 @@ MODULE STATISTIC
   Start12.c.o                                  0     57      0
   ticker.asm.o                                 1     62      2
   lcd.asm.o                                    2    185      9
-  clock.c.o                                    8    192      0
+  clock.c.o                                    8    203      0
   decToASCII.asm.o                             0    104      0
   led.asm.o                                    0     31      0
   button.asm.o                                 0     74      0
   delay.asm.o                                  0     19      0
-  thermometer.c.o                              2    109      2
-  other                                      256     17     45
+  thermometer.c.o                              2     76      0
+  other                                      256     17     43
 
 *********************************************************************************************
 SECTION USE IN OBJECT-ALLOCATION SECTION
 ---------------------------------------------------------------------------------------------
 SECTION: ".text"
   decToASCII_Wrapper WriteLine_Wrapper initLED_C main incSeconds incMinutes 
-  incHours getTimeString initClock tickClock adcISR updateThermometer 
-  initThermometer getTemperatureString int12 
+  incHours getTimeString initClock tickClock updateThermometer initThermometer 
+  getTemperatureString int12 
 SECTION: ".data"
-  memberString altString ticks VAR00001 temp1 amPm temperature 
+  memberString altString ticks VAR00001 temp1 temperature 
 SECTION: ".bss"
-  isSetMode clockEvent currentString tenSecCounter 
+  isSetMode clockEvent currentString tenSecCounter amPm 
 SECTION: ".init"
   Init _Startup initTicker isrECT4 notYet initLCD inext1 inext2 writeLine 
   writeLine1 wDo next fill_blank wEnd delay_10ms delay_5ms delay_50us del1 
@@ -2330,8 +2327,6 @@ SECTION: ".common"
 SECTION: ".const"
   VAR00002 VAR00003 VAR00004 VAR00005 VAR00006 VAR00007 VAR00008 VAR00009 
   VAR00010 
-SECTION: ".abs_section_ffd2"
-  _Vector_22 
 
 *********************************************************************************************
 OBJECT LIST SORTED BY ADDRESS
@@ -2419,17 +2414,17 @@ OBJECT LIST SORTED BY ADDRESS
      _TC1H                                       7A       2       2       0   .abs_section_7a
      _TC2H                                       7C       2       2       0   .abs_section_7c
      _TC3H                                       7E       2       2       0   .abs_section_7e
-     _ATD0CTL23                                  82       2       2       3   .abs_section_82
-     _ATD0CTL45                                  84       2       2       3   .abs_section_84
+     _ATD0CTL23                                  82       2       2       2   .abs_section_82
+     _ATD0CTL45                                  84       2       2       2   .abs_section_84
      _ATD0STAT0                                  86       1       1       1   .abs_section_86
      _ATD0TEST1                                  89       1       1       0   .abs_section_89
      _ATD0STAT1                                  8B       1       1       0   .abs_section_8b
      _ATD0DIEN                                   8D       1       1       0   .abs_section_8d
      _PORTAD0                                    8F       1       1       0   .abs_section_8f
-     _ATD0DR0                                    90       2       2       2   .abs_section_90
-     _ATD0DR1                                    92       2       2       1   .abs_section_92
-     _ATD0DR2                                    94       2       2       1   .abs_section_94
-     _ATD0DR3                                    96       2       2       1   .abs_section_96
+     _ATD0DR0                                    90       2       2       1   .abs_section_90
+     _ATD0DR1                                    92       2       2       0   .abs_section_92
+     _ATD0DR2                                    94       2       2       0   .abs_section_94
+     _ATD0DR3                                    96       2       2       0   .abs_section_96
      _ATD0DR4                                    98       2       2       0   .abs_section_98
      _ATD0DR5                                    9A       2       2       0   .abs_section_9a
      _ATD0DR6                                    9C       2       2       0   .abs_section_9c
@@ -2867,12 +2862,12 @@ OBJECT LIST SORTED BY ADDRESS
      ticks                                     1020       1       1       4   .data       
      VAR00001                                  1021       1       1       2   .data       
      temp1                                     1022       1       1       0   .data       
-     amPm                                      1023       2       2       3   .data       
-     temperature                               1025       2       2       3   .data       
-     isSetMode                                 1027       2       2       4   .bss        
-     clockEvent                                1029       1       1       3   .bss        
-     currentString                             102A       2       2       3   .bss        
-     tenSecCounter                             102C       2       2       3   .bss        
+     temperature                               1023       2       2       2   .data       
+     isSetMode                                 1025       2       2       4   .bss        
+     clockEvent                                1027       1       1       3   .bss        
+     currentString                             1028       2       2       3   .bss        
+     tenSecCounter                             102A       2       2       3   .bss        
+     amPm                                      102C       2       2       3   .bss        
      timeString                                102E       C      12      11   .common     
      temperatureString                         103A       7       7       6   .common     
      lowerString                               1041      10      16      17   .common     
@@ -2924,24 +2919,22 @@ OBJECT LIST SORTED BY ADDRESS
      main                                      C265      E6     230       3   .text       
      incSeconds                                C34B      12      18       2   .text       
      incMinutes                                C35D      12      18       2   .text       
-     incHours                                  C36F      1C      28       2   .text       
-     getTimeString                             C38B      5B      91       1   .text       
-     initClock                                 C3E6      11      17       1   .text       
-     tickClock                                 C3F7      14      20       1   .text       
-     adcISR                                    C40B      21      33       1   .text       
-     updateThermometer                         C42C      1A      26       1   .text       
-     initThermometer                           C446       F      15       1   .text       
-     getTemperatureString                      C455      23      35       1   .text       
-     VAR00002                                  C478       1       1       1   .const      
-     VAR00003                                  C479       1       1       0   .const      
-     VAR00004                                  C47A       1       1       0   .const      
-     VAR00005                                  C47B       1       1       0   .const      
-     VAR00006                                  C47C       1       1       1   .const      
-     VAR00007                                  C47D       1       1       0   .const      
-     VAR00008                                  C47E       1       1       0   .const      
-     VAR00009                                  C47F       1       1       0   .const      
-     VAR00010                                  C480       1       1       0   .const      
-     _Vector_22                                FFD2       2       2       0   .abs_section_ffd2
+     incHours                                  C36F      26      38       2   .text       
+     getTimeString                             C395      5C      92       1   .text       
+     initClock                                 C3F1      11      17       1   .text       
+     tickClock                                 C402      14      20       1   .text       
+     updateThermometer                         C416      1A      26       1   .text       
+     initThermometer                           C430       F      15       1   .text       
+     getTemperatureString                      C43F      23      35       1   .text       
+     VAR00002                                  C462       1       1       1   .const      
+     VAR00003                                  C463       1       1       0   .const      
+     VAR00004                                  C464       1       1       0   .const      
+     VAR00005                                  C465       1       1       0   .const      
+     VAR00006                                  C466       1       1       1   .const      
+     VAR00007                                  C467       1       1       0   .const      
+     VAR00008                                  C468       1       1       0   .const      
+     VAR00009                                  C469       1       1       0   .const      
+     VAR00010                                  C46A       1       1       0   .const      
      int12                                     FFE6       2       2       0   .text       
 
 *********************************************************************************************
@@ -2954,28 +2947,25 @@ clock.c.o:
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0xC481 ---- SIZE       4 ---
+------- ROM-ADDRESS: 0xC46B ---- SIZE       4 ---
 Filling bytes inserted
- 00271000
-------- ROM-ADDRESS: 0xC485 ---- RAM-ADDRESS: 0x1000 ---- SIZE      12 ---
+ 00251000
+------- ROM-ADDRESS: 0xC46F ---- RAM-ADDRESS: 0x1000 ---- SIZE      12 ---
 Name of initialized Object : memberString
  416C657820 466C6F7269 616E
-------- ROM-ADDRESS: 0xC491 ---- SIZE       4 ---
+------- ROM-ADDRESS: 0xC47B ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0xC495 ---- RAM-ADDRESS: 0x1010 ---- SIZE      13 ---
+------- ROM-ADDRESS: 0xC47F ---- RAM-ADDRESS: 0x1010 ---- SIZE      13 ---
 Name of initialized Object : altString
  2843292049 5420535332 303234
-------- ROM-ADDRESS: 0xC4A2 ---- SIZE       7 ---
+------- ROM-ADDRESS: 0xC48C ---- SIZE       6 ---
 Filling bytes inserted
- 0000000000 0000
-------- ROM-ADDRESS: 0xC4A9 ---- RAM-ADDRESS: 0x1024 ---- SIZE       1 ---
-Name of initialized Object : amPm:1
- 01
-------- ROM-ADDRESS: 0xC4AA ---- RAM-ADDRESS: 0x1025 ---- SIZE       2 ---
+ 0000000000 00
+------- ROM-ADDRESS: 0xC492 ---- RAM-ADDRESS: 0x1023 ---- SIZE       2 ---
 Name of initialized Object : temperature
  03FF
-------- ROM-ADDRESS: 0xC4AC ---- SIZE       2 ---
+------- ROM-ADDRESS: 0xC494 ---- SIZE       2 ---
 Filling bytes inserted
  0000
 
@@ -3014,12 +3004,9 @@ incHours                  USES hours amPm
 getTimeString             USES hours decToASCII_Wrapper minutes seconds amPm 
 initClock                 USES seconds minutes hours 
 tickClock                 USES incSeconds seconds incMinutes minutes incHours 
-adcISR                    USES _ATD0DR0 _ATD0DR1 _ATD0DR2 _ATD0DR3 temperature 
-                                _ATD0CTL23 _ATD0CTL45 
 updateThermometer         USES _ATD0CTL45 _ATD0STAT0 _ATD0DR0 temperature 
 initThermometer           USES _ATD0CTL23 delay_10ms _ATD0CTL45 
 getTemperatureString      USES temperature decToASCII_Wrapper 
-_Vector_22                USES adcISR 
 
 *********************************************************************************************
 DEPENDENCY TREE
@@ -3192,16 +3179,12 @@ DEPENDENCY TREE
  | 
  +- isrECT4              (see above)
     
- _Vector_22          
- | 
- +- adcISR              
-      
 *********************************************************************************************
 STATISTIC SECTION
 ---------------------------------------------------------------------------------------------
 
 ExeFile:
 --------
-Number of blocks to be downloaded: 8
-Total size of all blocks to be downloaded: 1204
+Number of blocks to be downloaded: 7
+Total size of all blocks to be downloaded: 1178
 
