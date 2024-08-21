@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project involves the development of a radio-frequency controlled clock based on the DCF77 signal, designed for the HCS12 microcontroller. This application utilizes HCS12's timer module and various other components such as LEDs, LCD, and buttons to create a comprehensive embedded system for timekeeping and temperature measurement. The Program was tested on the Dragon12 development board.
+This project involves the development of a clock, designed for the HCS12 microcontroller. This application utilizes HCS12's timer module and various other components such as LEDs, LCD, and buttons to create a comprehensive embedded system for timekeeping and temperature measurement. The Program was tested on the Dragon12 development board.
 
 ## Features
 
